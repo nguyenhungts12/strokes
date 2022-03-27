@@ -1,10 +1,27 @@
+setlocal enableextensions enabledelayedexpansion
+
 ::git add *
 ::git commit -m "6 commit"
 ::git push
 ::pause
-ECHO OFF
 
+ECHO OFF
+SET /A x=0
+SET /A plus=1
 FOR /r E:\strokes %%F IN (*.gif) DO (
-  ECHO %%F
-  move %%F
+  
+  ::move %%F
+  SET /A x = !x! + %plus%
+  if !x! == 10 (	
+	ECHO %%F
+	SET /a x=0
+	ECHO huhu
+  ) else (
+	ECHO ok
+  )
+  ECHO !x!
+  ::ECHO %x%
+  ::git add *
+  ::git commit -m "ok commit"
+  ::git push
 )
