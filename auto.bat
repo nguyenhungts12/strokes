@@ -7,7 +7,6 @@ SET /A plus=1
 FOR /r E:\strokes %%F IN (*.gif) DO (
   SET /A x = !x! + %plus%
   move %%F
-  ECHO %%F
   if !x! == 100 (	
 	SET /A x=0
 	ECHO commit
@@ -19,3 +18,7 @@ FOR /r E:\strokes %%F IN (*.gif) DO (
 	ECHO !x!
   )
 )
+
+git add *
+git commit -m "ok commit"
+git push
